@@ -82,7 +82,7 @@ fn intern_read(env: &mut JNIEnv, op: &mut BlockingOperator, path: JString) -> Re
 
 // Rust FFI function for OpenDAL's sync `read_with_offset`
 #[no_mangle]
-pub unsafe extern "system" fn Java_org_apache_opendal_Operator_read_with_offset(
+pub unsafe extern "system" fn Java_org_apache_opendal_Operator_readWithOffset(
     mut env: JNIEnv,
         _: JClass,
         op: *mut BlockingOperator,
