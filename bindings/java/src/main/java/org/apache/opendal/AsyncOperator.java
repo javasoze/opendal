@@ -229,7 +229,7 @@ public class AsyncOperator extends NativeObject {
     }
 
     public CompletableFuture<byte[]> read(String path, long offset, long len) {
-        final long requestId = read_with_offset(nativeHandle, executorHandle, offset, len, path);
+        final long requestId = readWithOffset(nativeHandle, executorHandle, offset, len, path);
         return AsyncRegistry.take(requestId);
     }
 
@@ -292,7 +292,7 @@ public class AsyncOperator extends NativeObject {
 
     private static native long read(long nativeHandle, long executorHandle, String path);
 
-    private static native long read_with_offset(long nativeHandle, long executorHandle, long offset, long len, String path);
+    private static native long readWithOffset(long nativeHandle, long executorHandle, long offset, long len, String path);
 
     private static native long write(
             long nativeHandle, long executorHandle, String path, byte[] content, WriteOptions options);
